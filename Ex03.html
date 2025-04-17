@@ -1,11 +1,42 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Exercício 3 </title>
+    <title>Exercício 3</title>
 </head>
 <body>
-    
+    <header>
+         <h1>Camisetas</h1>
+    </header>
+
+    <main>
+        <p>Camiseta Preta - R$50
+        <button onclick="adicionarAoCarrinho('Camiseta Preta — R$50')">Adicionar</button> </p>
+
+        <p>Camiseta Branca - R$40 
+        <button onclick="adicionarAoCarrinho('Camiseta Branca — R$40')">Adicionar</button> </p>
+
+        <h2>Carrinho:</h2>
+        <ul id="carrinho"></ul>
+    </main>
+
+    <footer></footer>
+
+    <script>
+        function adicionarAoCarrinho(item) {
+            const itemLista = document.createElement("li");
+            itemLista.innerText = item;
+
+            const botaoExcluir = document.createElement("button");
+            botaoExcluir.innerText = "Remover";
+            botaoExcluir.onclick = function () {
+                itemLista.remove();
+            };
+
+            itemLista.appendChild(botaoExcluir);
+            document.getElementById("carrinho").appendChild(itemLista);
+        }
+    </script>
 </body>
 </html>
